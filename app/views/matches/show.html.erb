@@ -1,0 +1,83 @@
+<p>
+  <strong>Outcome:</strong>
+  <% if @match.outcome == 1 %>
+    <div class="victory">Victory</div>
+  <% else @match.outcome == 0 %>
+   <div class="defeat">Defeat</div>
+  <% end %>
+</p>
+
+<p>
+  <strong>My Class:</strong>
+  <% if @match.user_class == 1 %>
+    <div class="druid">Druid</div>
+    <% end %>
+  <% if @match.user_class == 2 %>
+   <div class="hunter">Hunter</div>
+   <% end %>
+   <% if @match.user_class == 3 %>
+   <div class="mage">Mage</div>
+   <% end %>
+   <% if @match.user_class == 4 %>
+   <div class="paladin">Paladin</div>
+   <% end %>
+   <% if @match.user_class == 5 %>
+   <div class="priest">Priest</div>
+   <% end %>
+   <% if @match.user_class == 6 %>
+   <div class="rogue">Rogue</div>
+   <% end %>
+   <% if @match.user_class == 7 %>
+   <div class="shaman">Shaman</div>
+   <% end %>
+   <% if @match.user_class == 8 %>
+   <div class="warlock">Warlock</div>
+   <% end %>
+   <% if @match.user_class == 9 %>
+   <div class="warrior">Warrior</div>
+   <% end %>
+</p>
+
+<p>
+  <strong>Opponent's Class:</strong>
+  <% if @match.opp_class == 1 %>
+    <div class="druid">Druid</div>
+    <% end %>
+  <% if @match.opp_class == 2 %>
+   <div class="hunter">Hunter</div>
+   <% end %>
+   <% if @match.opp_class == 3 %>
+   <div class="mage">Mage</div>
+   <% end %>
+   <% if @match.opp_class == 4 %>
+   <div class="paladin">Paladin</div>
+   <% end %>
+   <% if @match.opp_class == 5 %>
+   <div class="priest">Priest</div>
+   <% end %>
+   <% if @match.opp_class == 6 %>
+   <div class="rogue">Rogue</div>
+   <% end %>
+   <% if @match.opp_class == 7 %>
+   <div class="shaman">Shaman</div>
+   <% end %>
+   <% if @match.opp_class == 8 %>
+   <div class="warlock">Warlock</div>
+   <% end %>
+   <% if @match.opp_class == 9 %>
+   <div class="warrior">Warrior</div>
+   <% end %>
+</p>
+
+<p>
+  <strong>Deck Name:</strong>
+  <%= @match.deck_name %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @match.notes %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>

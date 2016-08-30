@@ -1,0 +1,20 @@
+<h1>Match History</h1>
+
+<%= link_to 'New match', new_match_path %>
+
+<table>
+  <tr>
+    <th>Deck Name</th>
+    <th>Notes</th>
+  </tr>
+
+  <% @matches.each do |match| %>
+    <tr>
+      <td><%= match.deck_name %></td>
+      <td><%= match.notes %></td>
+      <td><%= link_to 'Show', match_path(match) %></td>
+      <td><%= link_to 'Edit', edit_match_path(match) %></td>
+      <td><%= link_to 'Destroy', match_path(match), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

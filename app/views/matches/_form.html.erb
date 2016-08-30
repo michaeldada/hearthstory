@@ -1,0 +1,78 @@
+<%= form_for @match do |f| %>
+
+  <% if @match.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:
+      </h2>
+      <ul>
+        <% @match.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h2>What was the outcome of the match?</h2>
+  <p>
+    <%= f.radio_button(:outcome, 1) %>
+    <%= label_tag(:outcome_won, "I Won!") %>
+    <%= f.radio_button(:outcome, 0) %>
+    <%= label_tag(:outcome_lost, "I lost :(") %>
+  </p>
+<h2>Which class did you play?</h2>
+  <p>
+    <%= f.radio_button(:user_class, 1) %>
+    <%= label_tag(:user_class_druid, "Druid") %>
+    <%= f.radio_button(:user_class, 2) %>
+    <%= label_tag(:user_class_hunter, "Hunter") %>
+    <%= f.radio_button(:user_class, 3) %>
+    <%= label_tag(:user_class_mage, "Mage") %>
+    <%= f.radio_button(:user_class, 4) %>
+    <%= label_tag(:user_class_paladin, "Paladin") %>
+    <%= f.radio_button(:user_class, 5) %>
+    <%= label_tag(:user_class_priest, "Priest") %>
+    <%= f.radio_button(:user_class, 6) %>
+    <%= label_tag(:user_class_rogue, "Rogue") %>
+    <%= f.radio_button(:user_class, 7) %>
+    <%= label_tag(:user_class_shaman, "Shaman") %>
+    <%= f.radio_button(:user_class, 8) %>
+    <%= label_tag(:user_class_warlock, "Warlock") %>
+    <%= f.radio_button(:user_class, 9) %>
+    <%= label_tag(:user_class_warrior, "Warrior") %>
+  </p>
+  <h2>Which class did your opponent play?</h2>
+  <p>
+    <%= f.radio_button(:opp_class, 1) %>
+    <%= label_tag(:opp_class_druid, "Druid") %>
+    <%= f.radio_button(:opp_class, 2) %>
+    <%= label_tag(:opp_class_hunter, "Hunter") %>
+    <%= f.radio_button(:opp_class, 3) %>
+    <%= label_tag(:opp_class_mage, "Mage") %>
+    <%= f.radio_button(:opp_class, 4) %>
+    <%= label_tag(:opp_class_paladin, "Paladin") %>
+    <%= f.radio_button(:opp_class, 5) %>
+    <%= label_tag(:opp_class_priest, "Priest") %>
+    <%= f.radio_button(:opp_class, 6) %>
+    <%= label_tag(:opp_class_rogue, "Rogue") %>
+    <%= f.radio_button(:opp_class, 7) %>
+    <%= label_tag(:opp_class_shaman, "Shaman") %>
+    <%= f.radio_button(:opp_class, 8) %>
+    <%= label_tag(:opp_class_warlock, "Warlock") %>
+    <%= f.radio_button(:opp_class, 9) %>
+    <%= label_tag(:opp_class_warrior, "Warrior") %>
+  </p>
+  <p>
+    <%= f.label :deck_name %><br>
+    <%= f.text_field :deck_name %>
+  </p>
+
+  <p>
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <% end %>
