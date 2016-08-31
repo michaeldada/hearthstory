@@ -1,4 +1,24 @@
 <h1>Stats</h1>
+<%= link_to 'Match History', controller: 'matches' %>
 <h2>You have played this many matches </h2>
 <%= @matches.count %>
-<%= link_to 'Match History', controller: 'matches' %>
+<h2>You have won this many matches </h2>
+<%= @wins.count %>
+<h2>You have lost this many matches </h2>
+<%= @losses.count %>
+<h2>Your win rate </h2>
+<%= number_to_percentage(@wins.count.to_f / @matches.count * 100, precision: 0) %>
+
+
+
+
+<h2>You have played this many druid matches </h2>
+<%= @druid_matches.count %>
+<h2>You have won this many druid matches </h2>
+<%= @druid_wins.count %>
+<h2>You have lost this many druid matches </h2>
+<%= @druid_losses.count %>
+
+
+
+
